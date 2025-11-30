@@ -1,0 +1,27 @@
+{
+  "name": "grisha-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Adapters/Chrome/ChromeAdapter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "chrome:goto": "node ./Actions/Chrome/ChromeGoTo.js",
+    "chrome:close": "node ./Actions/Chrome/ChromeClose.js",
+    "telegram": "node telegram.js",
+    "telegram:admin": "node telegramAdmin.js",
+    "migrate": "node-pg-migrate up -m ./migrations",
+    "migrate:down": "node-pg-migrate down -m ./migrations"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "node-pg-migrate": "^8.0.3",
+    "node-telegram-bot-api": "^0.66.0",
+    "open": "^11.0.0",
+    "pg": "^8.16.3",
+    "puppeteer": "^24.31.0"
+  }
+}
