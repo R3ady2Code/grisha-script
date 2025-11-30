@@ -1,7 +1,7 @@
 import ChromeAdapter from '../../Adapters/Chrome/ChromeAdapter.js';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,6 +19,7 @@ class ForumsServices {
   }
 
   async bfdcrew(imgUrl) {
+    const targetUrl = 'https://bfdcrew.ru/forum/index.php?action=profile;area=showposts';
     const messageText = this.getMessageText('bfdcrew', imgUrl);
 
     try {
@@ -33,9 +34,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -43,6 +41,7 @@ class ForumsServices {
   }
 
   async crdpro(imgUrl) {
+    const targetUrl = 'https://crdpro.cc/threads/free-databases.64845/';
     const messageText = this.getMessageText('crdpro', imgUrl);
 
     try {
@@ -57,9 +56,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -81,9 +77,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -105,9 +98,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('input#qr_submit');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -134,9 +124,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('button.ipsButton[type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -158,9 +145,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -182,9 +166,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -206,9 +187,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -230,9 +208,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -254,9 +229,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -278,9 +250,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -302,9 +271,6 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-
-      await this.chromeAdapter.sleep(1000, 1000);
-      await this.chromeAdapter.close();
     } catch (error) {
       console.error('Ошибка:', error.message);
       await this.chromeAdapter.close();
@@ -314,4 +280,6 @@ class ForumsServices {
 
 const forumsServices = new ForumsServices();
 
+forumsServices.crdpro(
+    'https://s09.stc.yc.kpcdn.net/share/i/4/1237988/wr-750.webp');
 export default forumsServices;
