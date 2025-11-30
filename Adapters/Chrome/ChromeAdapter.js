@@ -140,6 +140,38 @@ class ChromeAdapter {
     }
   }
 
+  // Вставка текста через clipboard (сохраняет форматирование и переносы)
+  async paste(selector, text) {
+    try {
+      await this.page.waitForSelector(selector, {timeout: 10000});
+      const element = await this.page.$(selector);
+
+      if (!element) {
+        console.log(`Элемент ${selector} не найден`);
+        return false;
+      }
+
+      await this.moveTo(element);
+      await element.click();
+      await this.sleep(200, 400);
+
+      // Записываем текст в clipboard и вставляем
+      await this.page.evaluate(async (text) => {
+        await navigator.clipboard.writeText(text);
+      }, text);
+
+      await this.page.keyboard.down('Control');
+      await this.page.keyboard.press('KeyV');
+      await this.page.keyboard.up('Control');
+
+      console.log('Текст вставлен через clipboard');
+      return true;
+    } catch (error) {
+      console.error(`Ошибка при вставке текста:`, error.message);
+      return false;
+    }
+  }
+
   // Печать текста как человек
   async type(selector, text) {
     try {
