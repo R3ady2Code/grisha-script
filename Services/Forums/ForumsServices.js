@@ -280,6 +280,6 @@ class ForumsServices {
 
 const forumsServices = new ForumsServices();
 
-forumsServices.crdpro(
-    'https://s09.stc.yc.kpcdn.net/share/i/4/1237988/wr-750.webp');
+// forumsServices.crdpro(
+//     'https://s09.stc.yc.kpcdn.net/share/i/4/1237988/wr-750.webp');
 export default forumsServices;
