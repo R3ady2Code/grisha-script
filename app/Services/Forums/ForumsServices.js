@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import notifyService from '../Notify/NotifyService.js';
+import 'dotenv/config';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,7 +22,7 @@ class ForumsServices {
   }
 
   async bfdcrew(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_BFDCREW;
     const messageText = this.getMessageText('bfdcrew', imgUrl);
 
     try {
@@ -44,7 +45,7 @@ class ForumsServices {
   }
 
   async crdpro(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_CRDPRO;
     const messageText = this.getMessageText('crdpro', imgUrl);
 
     try {
@@ -67,7 +68,7 @@ class ForumsServices {
   }
 
   async ascarding(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_ASCARDING;
     const messageText = this.getMessageText('ascarding', imgUrl);
 
     try {
@@ -90,7 +91,7 @@ class ForumsServices {
   }
 
   async toCrd(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_TOCRD;
     const messageText = this.getMessageText('toCrd', imgUrl);
 
     try {
@@ -113,7 +114,7 @@ class ForumsServices {
   }
 
   async enclave(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_ENCLAVE;
     const messageText = this.getMessageText('enclave', imgUrl);
 
     try {
@@ -141,7 +142,7 @@ class ForumsServices {
   }
 
   async blackbones(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_BLACKBONES;
     const messageText = this.getMessageText('blackbones', imgUrl);
 
     try {
@@ -164,7 +165,7 @@ class ForumsServices {
   }
 
   async darkmarket(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_DARKMARKET;
     const messageText = this.getMessageText('darkmarket', imgUrl);
 
     try {
@@ -187,7 +188,7 @@ class ForumsServices {
   }
 
   async carder(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_CARDER;
     const messageText = this.getMessageText('carder', imgUrl);
 
     try {
@@ -210,7 +211,7 @@ class ForumsServices {
   }
 
   async vlmi(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_VLMI;
     const messageText = this.getMessageText('vlmi', imgUrl);
 
     try {
@@ -233,7 +234,7 @@ class ForumsServices {
   }
 
   async itnull(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_ITNULL;
     const messageText = this.getMessageText('itnull', imgUrl);
 
     try {
@@ -256,7 +257,7 @@ class ForumsServices {
   }
 
   async forumteam(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_FORUMTEAM;
     const messageText = this.getMessageText('forumteam', imgUrl);
 
     try {
@@ -279,7 +280,7 @@ class ForumsServices {
   }
 
   async migalki(imgUrl) {
-    const targetUrl = '';
+    const targetUrl = process.env.FORUM_URL_MIGALKI;
     const messageText = this.getMessageText('migalki', imgUrl);
 
     try {
