@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "chrome:goto": "node app/Actions/Chrome/ChromeGoTo.js",
     "chrome:close": "node app/Actions/Chrome/ChromeClose.js",
-    "telegram": "node telegram.js",
-    "telegram:admin": "node telegramAdmin.js",
+    "telegram": "node app/Bots/User/index.js",
+    "telegram:admin": "node app/Bots/Admin/index.js",
     "migrate": "node-pg-migrate up -m ./migrations",
     "migrate:down": "node-pg-migrate down -m ./migrations"
   },
