@@ -1,17 +1,16 @@
 import forumsServices from '../../Services/Forums/ForumsServices.js';
 import {getAndDeleteOldestImage} from '../../../db.js';
-import bot from '../../Bots/Admin/bot.js';
+import notifyService from '../../Services/Notify/NotifyService.js';
 
 export default async function(chatId) {
+  notifyService.setChatId(chatId);
+
   const imgSource = await getAndDeleteOldestImage();
 
   if (!imgSource) {
-    console.log('Нет изображений в базе данных');
-    await bot.sendMessage(chatId, 'Нет изображений в базе данных');
+    await notifyService.send('Нет изображений в базе данных');
     return;
   }
-
-  forumsServices.setChatId(chatId);
 
   await forumsServices.bfdcrew(imgSource);
   await forumsServices.crdpro(imgSource);

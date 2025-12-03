@@ -14,10 +14,6 @@ class ForumsServices {
     this.notifyService = notifyService;
   }
 
-  setNotifyService(service) {
-    this.notifyService = service;
-  }
-
   getMessageText(templateName, imgUrl) {
     const templatePath = path.join(this.templatesDir, `${templateName}.bbcode`);
     const template = fs.readFileSync(templatePath, 'utf-8');
@@ -206,9 +202,9 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
-      await this.notify('Успешно отправлено в сервис: carder');
+      await this.notifyService.send('Успешно отправлено в сервис: carder');
     } catch (error) {
-      await this.notify(`Ошибка carder: ${error.message}`);
+      await this.notifyService.send(`Ошибка carder: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
