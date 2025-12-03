@@ -25,7 +25,5 @@ export default async function(chatId) {
   await forumsServices.forumteam(imgSource);
   await forumsServices.migalki(imgSource);
 
-  await forumsServices.chromeAdapter.sleep(100000, 100000);
-
   await forumsServices.chromeAdapter.close();
 }

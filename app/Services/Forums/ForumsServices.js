@@ -21,6 +21,10 @@ class ForumsServices {
     return template.replace('{{img_url_link}}', imgUrl);
   }
 
+  async sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
   async bfdcrew(imgUrl) {
     const targetUrl = process.env.FORUM_URL_BFDCREW;
     const messageText = this.getMessageText('bfdcrew', imgUrl);
@@ -35,8 +39,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: bfdcrew');
     } catch (error) {
       await this.notifyService.send(`Ошибка bfdcrew: ${error.message}`);
@@ -58,8 +67,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: crdpro');
     } catch (error) {
       await this.notifyService.send(`Ошибка crdpro: ${error.message}`);
@@ -81,8 +95,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: ascarding');
     } catch (error) {
       await this.notifyService.send(`Ошибка ascarding: ${error.message}`);
@@ -104,8 +123,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('textarea[name="message"]', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('input#qr_submit');
+        const clicked = await this.chromeAdapter.click('input#qr_submit');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: toCrd');
     } catch (error) {
       await this.notifyService.send(`Ошибка toCrd: ${error.message}`);
@@ -132,8 +156,13 @@ class ForumsServices {
             '.cke_wysiwyg_div.cke_reset.cke_enable_context_menu.cke_editable.cke_editable_themed.cke_contents_ltr',
             messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('button.ipsButton[type="submit"]');
+        const clicked = await this.chromeAdapter.click('button.ipsButton[type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: enclave');
     } catch (error) {
       await this.notifyService.send(`Ошибка enclave: ${error.message}`);
@@ -155,8 +184,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: blackbones');
     } catch (error) {
       await this.notifyService.send(`Ошибка blackbones: ${error.message}`);
@@ -178,8 +212,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: darkmarket');
     } catch (error) {
       await this.notifyService.send(`Ошибка darkmarket: ${error.message}`);
@@ -201,8 +240,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: carder');
     } catch (error) {
       await this.notifyService.send(`Ошибка carder: ${error.message}`);
@@ -224,11 +268,16 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
-      await this.notify('Успешно отправлено в сервис: vlmi');
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
+      await this.notifyService.send('Успешно отправлено в сервис: vlmi');
     } catch (error) {
-      await this.notify(`Ошибка vlmi: ${error.message}`);
+      await this.notifyService.send(`Ошибка vlmi: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
@@ -247,11 +296,16 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
-      await this.notify('Успешно отправлено в сервис: itnull');
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
+      await this.notifyService.send('Успешно отправлено в сервис: itnull');
     } catch (error) {
-      await this.notify(`Ошибка itnull: ${error.message}`);
+      await this.notifyService.send(`Ошибка itnull: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
@@ -270,11 +324,16 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
-      await this.notify('Успешно отправлено в сервис: forumteam');
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
+      await this.notifyService.send('Успешно отправлено в сервис: forumteam');
     } catch (error) {
-      await this.notify(`Ошибка forumteam: ${error.message}`);
+      await this.notifyService.send(`Ошибка forumteam: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
@@ -293,11 +352,16 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
       }
-      await this.notify('Успешно отправлено в сервис: migalki');
+      await this.sleep(15000);
+      await this.chromeAdapter.close();
+      await this.notifyService.send('Успешно отправлено в сервис: migalki');
     } catch (error) {
-      await this.notify(`Ошибка migalki: ${error.message}`);
+      await this.notifyService.send(`Ошибка migalki: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
