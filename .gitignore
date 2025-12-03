@@ -3,4 +3,4 @@ node_modules/
 *.log
 .DS_Store
 .claude/
-Adapters/Chrome/chrome-profile/**
+app/Adapters/Chrome/chrome-profile/**

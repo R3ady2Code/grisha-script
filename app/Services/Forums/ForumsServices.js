@@ -2,6 +2,7 @@ import ChromeAdapter from '../../Adapters/Chrome/ChromeAdapter.js';
 import fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
+import notifyService from '../Notify/NotifyService.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,7 +10,12 @@ const __dirname = path.dirname(__filename);
 class ForumsServices {
   constructor() {
     this.chromeAdapter = new ChromeAdapter();
-    this.templatesDir = path.join(__dirname, '../../templates');
+    this.templatesDir = path.join(__dirname, '../../../templates');
+    this.notifyService = notifyService;
+  }
+
+  setNotifyService(service) {
+    this.notifyService = service;
   }
 
   getMessageText(templateName, imgUrl) {
@@ -19,7 +25,7 @@ class ForumsServices {
   }
 
   async bfdcrew(imgUrl) {
-    const targetUrl = 'https://bfdcrew.ru/forum/index.php?action=profile;area=showposts';
+    const targetUrl = '';
     const messageText = this.getMessageText('bfdcrew', imgUrl);
 
     try {
@@ -34,14 +40,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: bfdcrew');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка bfdcrew: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async crdpro(imgUrl) {
-    const targetUrl = 'https://crdpro.cc/threads/free-databases.64845/';
+    const targetUrl = '';
     const messageText = this.getMessageText('crdpro', imgUrl);
 
     try {
@@ -56,13 +63,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: crdpro');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка crdpro: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async ascarding(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('ascarding', imgUrl);
 
     try {
@@ -77,13 +86,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: ascarding');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка ascarding: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async toCrd(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('toCrd', imgUrl);
 
     try {
@@ -98,13 +109,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('input#qr_submit');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: toCrd');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка toCrd: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async enclave(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('enclave', imgUrl);
 
     try {
@@ -124,13 +137,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('button.ipsButton[type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: enclave');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка enclave: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async blackbones(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('blackbones', imgUrl);
 
     try {
@@ -145,13 +160,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: blackbones');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка blackbones: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async darkmarket(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('darkmarket', imgUrl);
 
     try {
@@ -166,13 +183,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notifyService.send('Успешно отправлено в сервис: darkmarket');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notifyService.send(`Ошибка darkmarket: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async carder(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('carder', imgUrl);
 
     try {
@@ -187,13 +206,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notify('Успешно отправлено в сервис: carder');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notify(`Ошибка carder: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async vlmi(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('vlmi', imgUrl);
 
     try {
@@ -208,13 +229,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notify('Успешно отправлено в сервис: vlmi');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notify(`Ошибка vlmi: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async itnull(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('itnull', imgUrl);
 
     try {
@@ -229,13 +252,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notify('Успешно отправлено в сервис: itnull');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notify(`Ошибка itnull: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async forumteam(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('forumteam', imgUrl);
 
     try {
@@ -250,13 +275,15 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notify('Успешно отправлено в сервис: forumteam');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notify(`Ошибка forumteam: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
 
   async migalki(imgUrl) {
+    const targetUrl = '';
     const messageText = this.getMessageText('migalki', imgUrl);
 
     try {
@@ -271,8 +298,9 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
       }
+      await this.notify('Успешно отправлено в сервис: migalki');
     } catch (error) {
-      console.error('Ошибка:', error.message);
+      await this.notify(`Ошибка migalki: ${error.message}`);
       await this.chromeAdapter.close();
     }
   }
@@ -280,6 +308,4 @@ class ForumsServices {
 
 const forumsServices = new ForumsServices();
 
-// forumsServices.crdpro(
-//     'https://s09.stc.yc.kpcdn.net/share/i/4/1237988/wr-750.webp');
 export default forumsServices;

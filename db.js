@@ -22,4 +22,11 @@ export async function getAllImages() {
   return result.rows;
 }
 
+export async function getAndDeleteOldestImage() {
+  const result = await pool.query(
+    'DELETE FROM images WHERE id = (SELECT id FROM images ORDER BY created_at ASC LIMIT 1) RETURNING url'
+  );
+  return result.rows[0]?.url || null;
+}
+
 export default pool;

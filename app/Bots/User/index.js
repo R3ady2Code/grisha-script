@@ -1,11 +1,5 @@
-import TelegramBot from 'node-telegram-bot-api';
-import dotenv from 'dotenv';
-import {saveImage} from './db.js';
-
-dotenv.config();
-
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const bot = new TelegramBot(token, {polling: true});
+import bot from './bot.js';
+import {saveImage} from '../../../db.js';
 
 const URL_REGEX = /https?:\/\/[^\s]+\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?[^\s]*)?/gi;
 
@@ -20,7 +14,7 @@ bot.on('message', async (msg) => {
 
     if (!match) {
       await bot.sendMessage(msg.chat.id,
-          'Ссылка не найдена. Отправь ссылку на изображение (.jpg, .png, .gif и т.д.)');
+          'Ссылка не найдена. Отправь ссылку на изображение (jpg|jpeg|png|gif|webp|bmp|svg)');
       return;
     }
 
@@ -34,4 +28,4 @@ bot.on('message', async (msg) => {
   }
 });
 
-console.log('Telegram bot started...');
+export default bot;
