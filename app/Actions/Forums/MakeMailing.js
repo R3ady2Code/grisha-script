@@ -15,15 +15,15 @@ export default async function(chatId) {
   await forumsServices.bfdcrew(imgSource);
   await forumsServices.crdpro(imgSource);
   await forumsServices.ascarding(imgSource);
-  await forumsServices.toCrd(imgSource);
-  await forumsServices.enclave(imgSource);
-  await forumsServices.blackbones(imgSource);
-  await forumsServices.darkmarket(imgSource);
-  await forumsServices.carder(imgSource);
-  await forumsServices.vlmi(imgSource);
-  await forumsServices.itnull(imgSource);
-  await forumsServices.forumteam(imgSource);
-  await forumsServices.migalki(imgSource);
+  // await forumsServices.toCrd(imgSource);
+  // await forumsServices.enclave(imgSource);
+  // await forumsServices.blackbones(imgSource);
+  // await forumsServices.darkmarket(imgSource);
+  // await forumsServices.carder(imgSource);
+  // await forumsServices.vlmi(imgSource);
+  // await forumsServices.itnull(imgSource);
+  // await forumsServices.forumteam(imgSource);
+  // await forumsServices.migalki(imgSource);
 
   await forumsServices.chromeAdapter.close();
 }

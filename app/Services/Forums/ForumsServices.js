@@ -39,12 +39,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
       }
-      await this.sleep(15000);
+      await this.sleep(30000);
       await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: bfdcrew');
     } catch (error) {
@@ -67,12 +68,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
       }
-      await this.sleep(15000);
+      await this.sleep(30000);
       await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: crdpro');
     } catch (error) {
@@ -95,12 +97,13 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
       }
-      await this.sleep(15000);
+      await this.sleep(30000);
       await this.chromeAdapter.close();
       await this.notifyService.send('Успешно отправлено в сервис: ascarding');
     } catch (error) {
@@ -156,7 +159,8 @@ class ForumsServices {
             '.cke_wysiwyg_div.cke_reset.cke_enable_context_menu.cke_editable.cke_editable_themed.cke_contents_ltr',
             messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('button.ipsButton[type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            'button.ipsButton[type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -184,7 +188,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -212,7 +217,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -240,7 +246,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -268,7 +275,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -296,7 +304,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -324,7 +333,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }
@@ -352,7 +362,8 @@ class ForumsServices {
         await this.chromeAdapter.sleep(300, 600);
         await this.chromeAdapter.paste('.fr-wrapper', messageText);
         await this.chromeAdapter.sleep(300, 600);
-        const clicked = await this.chromeAdapter.click('.formButtonGroup [type="submit"]');
+        const clicked = await this.chromeAdapter.click(
+            '.formButtonGroup [type="submit"]');
         if (!clicked) {
           throw new Error('Не удалось отправить сообщение');
         }

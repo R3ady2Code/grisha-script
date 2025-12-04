@@ -4,3 +4,4 @@ node_modules/
 .DS_Store
 .claude/
 app/Adapters/Chrome/chrome-profile/**
+templates/
