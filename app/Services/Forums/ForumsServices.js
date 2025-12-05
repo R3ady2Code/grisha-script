@@ -45,7 +45,7 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send('Успешно отправлено в сервис: bfdcrew');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка bfdcrew: ${error.message}`);
     }
@@ -71,7 +71,7 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send('Успешно отправлено в сервис: crdpro');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка crdpro: ${error.message}`);
     }
@@ -97,7 +97,7 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send('Успешно отправлено в сервис: ascarding');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка ascarding: ${error.message}`);
     }
@@ -122,7 +122,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: toCrd');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка toCrd: ${error.message}`);
     }
@@ -153,7 +153,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: enclave');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка enclave: ${error.message}`);
     }
@@ -179,7 +179,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: blackbones');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка blackbones: ${error.message}`);
     }
@@ -205,7 +205,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: darkmarket');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка darkmarket: ${error.message}`);
     }
@@ -231,7 +231,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: carder');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка carder: ${error.message}`);
     }
@@ -257,7 +257,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: vlmi');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка vlmi: ${error.message}`);
     }
@@ -283,7 +283,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: itnull');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка itnull: ${error.message}`);
     }
@@ -309,7 +309,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: forumteam');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка forumteam: ${error.message}`);
     }
@@ -335,7 +335,7 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send('Успешно отправлено в сервис: migalki');
+      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка migalki: ${error.message}`);
     }
