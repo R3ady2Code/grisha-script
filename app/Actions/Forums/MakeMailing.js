@@ -18,6 +18,7 @@ export default async function(chatId) {
   await forumsServices.crdpro(imgSource);
   await forumsServices.ascarding(imgSource);
   await forumsServices.toCrd(imgSource);
+  await forumsServices.toCrdRus(imgSource);
   await forumsServices.enclave(imgSource);
   await forumsServices.blackbones(imgSource);
   await forumsServices.darkmarket(imgSource);

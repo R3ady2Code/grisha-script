@@ -45,7 +45,8 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка bfdcrew: ${error.message}`);
     }
@@ -71,7 +72,8 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка crdpro: ${error.message}`);
     }
@@ -97,7 +99,8 @@ class ForumsServices {
         }
       }
       await this.sleep(30000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка ascarding: ${error.message}`);
     }
@@ -122,9 +125,36 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка toCrd: ${error.message}`);
+    }
+  }
+
+  async toCrdRus(imgUrl) {
+    const targetUrl = process.env.FORUM_URL_TOCRD_RUS;
+    const messageText = this.getMessageText('toCrdRus', imgUrl);
+
+    try {
+      await this.chromeAdapter.goto(targetUrl);
+      await this.chromeAdapter.scroll();
+      await this.chromeAdapter.click('textarea[name="message"]');
+
+      if (messageText) {
+        await this.chromeAdapter.sleep(300, 600);
+        await this.chromeAdapter.paste('textarea[name="message"]', messageText);
+        await this.chromeAdapter.sleep(300, 600);
+        const clicked = await this.chromeAdapter.click('input#qr_submit');
+        if (!clicked) {
+          throw new Error('Не удалось отправить сообщение');
+        }
+      }
+      await this.sleep(15000);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
+    } catch (error) {
+      await this.notifyService.send(`Ошибка toCrdRus: ${error.message}`);
     }
   }
 
@@ -153,7 +183,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка enclave: ${error.message}`);
     }
@@ -179,7 +210,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка blackbones: ${error.message}`);
     }
@@ -205,7 +237,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка darkmarket: ${error.message}`);
     }
@@ -231,7 +264,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка carder: ${error.message}`);
     }
@@ -257,7 +291,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка vlmi: ${error.message}`);
     }
@@ -283,7 +318,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка itnull: ${error.message}`);
     }
@@ -309,7 +345,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка forumteam: ${error.message}`);
     }
@@ -335,7 +372,8 @@ class ForumsServices {
         }
       }
       await this.sleep(15000);
-      await this.notifyService.send(`Успешно отправлено в сервис: ${targetUrl}`);
+      await this.notifyService.send(
+          `Успешно отправлено в сервис: ${targetUrl}`);
     } catch (error) {
       await this.notifyService.send(`Ошибка migalki: ${error.message}`);
     }
