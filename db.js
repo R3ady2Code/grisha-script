@@ -24,4 +24,11 @@ export async function getAndDeleteOldestImage() {
   return result.rows[0]?.url || null;
 }
 
+export async function getAllUrls() {
+  const result = await pool.query(
+      'SELECT url FROM images ORDER BY created_at ASC',
+  );
+  return result.rows.map(row => row.url);
+}
+
 export default pool;
