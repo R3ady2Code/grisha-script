@@ -56,9 +56,16 @@ class ChromeAdapter {
     }
   }
 
-  // Переход на страницу
+  // Переход на страницу (всегда в новой вкладке)
   async goto(url) {
-    console.log(`Открываю ${url}...`);
+    console.log(`Открываю ${url} в новой вкладке...`);
+    this.page = await this.browser.newPage();
+
+    // Скрываем признаки автоматизации для новой вкладки
+    await this.page.evaluateOnNewDocument(() => {
+      Object.defineProperty(navigator, 'webdriver', {get: () => false});
+    });
+
     await this.page.goto(url, {waitUntil: 'networkidle2'});
     console.log('Страница загружена');
     await this.sleep(500, 1500);

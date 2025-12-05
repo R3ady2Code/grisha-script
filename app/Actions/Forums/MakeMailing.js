@@ -12,6 +12,8 @@ export default async function(chatId) {
     return;
   }
 
+  await forumsServices.chromeAdapter.launch();
+
   await forumsServices.bfdcrew(imgSource);
   await forumsServices.crdpro(imgSource);
   await forumsServices.ascarding(imgSource);
